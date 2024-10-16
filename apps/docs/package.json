@@ -1,0 +1,64 @@
+{
+  "name": "@kariba/docs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "pnpm build:everything",
+    "build:docs": "docusaurus build",
+    "build:everything": "pnpm plasmic:update && pnpm plasmic:sync && pnpm build:docs",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "dev": "docusaurus start",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "lint": "pnpm lint:eslint && pnpm lint:prettier",
+    "lint:eslint": "eslint --max-warnings 0 .",
+    "lint:prettier": "prettier --ignore-path ../../.gitignore --ignore-path .gitignore --ignore-path .prettierignore --log-level warn --check **/*.{js,jsx,ts,tsx,sol,md,json}",
+    "plasmic:update": "pnpm update @plasmicapp/cli @plasmicapp/react-web",
+    "plasmic:sync": "pnpm plasmic sync --yes --force"
+  },
+  "dependencies": {
+    "@docusaurus/core": "3.5.2",
+    "@docusaurus/preset-classic": "3.5.2",
+    "@docusaurus/theme-common": "3.5.2",
+    "@laxels/docusaurus-plugin-segment": "^1.0.6",
+    "@mdx-js/react": "^3.0.1",
+    "@plasmicapp/react-web": "^0.2.353",
+    "@plasmicpkgs/plasmic-basic-components": "^0.0.230",
+    "clsx": "^2.1.1",
+    "lodash": "^4.17.21",
+    "prism-react-renderer": "^2.4.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "3.5.2",
+    "@docusaurus/tsconfig": "3.5.2",
+    "@docusaurus/types": "3.5.2",
+    "@eslint/compat": "^1.2.0",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.12.0",
+    "@plasmicapp/cli": "^0.1.331",
+    "dotenv": "^16.4.5",
+    "typescript": "~5.6.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0"
+  }
+}

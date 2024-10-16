@@ -1,0 +1,49 @@
+{
+  "name": "kariba",
+  "description": "Funding public goods.",
+  "version": "0.0.0",
+  "author": "Kariba Labs",
+  "license": "Apache-2.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opensource-observer/kariba.git"
+  },
+  "scripts": {
+    "build": "turbo run build --concurrency=100%",
+    "build:dbt:docs": "poetry run dbt docs generate",
+    "build:docs": "turbo run build --filter=@opensource-observer/docs",
+    "build:frontend": "turbo run build --filter=@opensource-observer/frontend",
+    "build:hasura": "turbo run build --filter=@opensource-observer/hasura2",
+    "build:ops": "turbo run build --filter=@opensource-observer/ops-*",
+    "copy": "yarn copy:frontend && yarn copy:docs && yarn copy:html",
+    "copy:docs": "mkdir -p ./build/docs/ && cp -r ./apps/docs/build/* ./build/docs/",
+    "copy:frontend": "mkdir -p ./build/ && cp -r ./apps/frontend/out/* ./build/ && cp ./apps/frontend/_redirects ./build/",
+    "copy:html": "find build/ -name '*.html' -type f | grep -v index.html | sed s/\\.html$// | xargs -I _ bash -c 'mkdir -p _ && cp -v _.html _/index.html'",
+    "deploy:hasura": "turbo run deploy --filter=@opensource-observer/hasura2 --parallel",
+    "deploy:site": "turbo run build --filter=@opensource-observer/docs --filter=@opensource-observer/frontend && turbo run deploy --filter=@opensource-observer/frontend && yarn copy",
+    "dev:docs": "turbo run dev --filter=@opensource-observer/docs --parallel",
+    "dev:frontend": "turbo run dev --filter=@opensource-observer/frontend --parallel",
+    "format:staged": "lint-staged",
+    "lint": "turbo run lint --concurrency=100%",
+    "serve": "yarn serve build",
+    "pyright": "pyright --pythonpath $(poetry env info --path)/bin/python",
+    "test": "turbo run test --concurrency=1",
+    "test:integration": "(docker compose -f docker/compose.yaml down || true) && docker compose -f docker/compose.yaml run --rm test",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "eslint": "^9.12.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "turbo": "^2.1.3"
+  },
+  "engines": {
+    "node": ">=18.x",
+    "pnpm": ">=8"
+  },
+  "dependencies": {
+    "pyright": "^1.1.385"
+  }
+}
