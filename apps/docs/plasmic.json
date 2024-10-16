@@ -1,0 +1,187 @@
+{
+  "platform": "react",
+  "code": {
+    "lang": "ts",
+    "scheme": "blackbox",
+    "reactRuntime": "classic"
+  },
+  "style": {
+    "scheme": "css-modules",
+    "defaultStyleCssFilePath": "generated/plasmic__default_style.module.css"
+  },
+  "images": {
+    "scheme": "public-files",
+    "publicDir": "../../../static/plasmic",
+    "publicUrlPrefix": "/plasmic/"
+  },
+  "tokens": {
+    "scheme": "theo",
+    "tokensFilePath": "plasmic-tokens.theo.json"
+  },
+  "srcDir": "src/components/plasmic",
+  "defaultPlasmicDir": "./generated",
+  "projects": [
+    {
+      "projectId": "caTPwKxj5ZrD9LQ7DMdK4Z",
+      "projectApiToken": "vXGGQpdi9fhcncabBdg8DcMRUbkz0iRW6HS1jzQufQR6QH0MasPwr9SX7ap4SsK3xXwwXmzZtglWGe0Rm2nw",
+      "projectName": "plasmic-basic-components",
+      "version": ">0.0.0",
+      "cssFilePath": "generated/plasmic_basic_components/plasmic.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "CMDBvOhaI4s",
+          "name": "Iframe",
+          "displayName": "hostless-iframe",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "RhitNJW5Zu-",
+          "name": "Video",
+          "displayName": "hostless-html-video",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "PKldDYkH42",
+          "name": "Embed",
+          "displayName": "hostless-embed",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "D4RbnlpRXg3",
+          "name": "DataProvider",
+          "displayName": "hostless-data-provider",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "zlBHsvkFlN",
+          "name": "ConditionGuard",
+          "displayName": "hostless-condition-guard",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "K-mWGqrHefEp",
+          "name": "SideEffect",
+          "displayName": "hostless-side-effect",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "SpkzmXJqg27p",
+          "name": "Timer",
+          "displayName": "hostless-timer",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        }
+      ],
+      "customFunctions": []
+    },
+    {
+      "projectId": "4ZGquwTsYbHEmYTQjLVG82",
+      "projectApiToken": "IYIaTDqnM3AR4wj5q3Qkg4AHFlt4d57tsmID6trgX3M98nxRcuKj8ZS1sUGptH90lTgApCU5ZIBwbSUSPyAUKw",
+      "projectName": "docs.kariba.network",
+      "version": "latest",
+      "cssFilePath": "generated/docs_kariba_network/plasmic.module.css",
+      "components": [
+        {
+          "id": "5CUlIYp5tQb0",
+          "name": "Overview",
+          "type": "managed",
+          "projectId": "4ZGquwTsYbHEmYTQjLVG82",
+          "renderModuleFilePath": "generated/docs_kariba_network/PlasmicOverview.tsx",
+          "importSpec": {
+            "modulePath": "Overview.tsx"
+          },
+          "cssFilePath": "generated/docs_kariba_network/PlasmicOverview.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "DN2OfxkKwMtl",
+          "name": "Button",
+          "type": "managed",
+          "projectId": "4ZGquwTsYbHEmYTQjLVG82",
+          "renderModuleFilePath": "generated/docs_kariba_network/PlasmicButton.tsx",
+          "importSpec": {
+            "modulePath": "Button.tsx"
+          },
+          "cssFilePath": "generated/docs_kariba_network/PlasmicButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "button"
+        },
+        {
+          "id": "35ZouyTENkJc",
+          "name": "Card",
+          "type": "managed",
+          "projectId": "4ZGquwTsYbHEmYTQjLVG82",
+          "renderModuleFilePath": "generated/docs_kariba_network/PlasmicCard.tsx",
+          "importSpec": {
+            "modulePath": "Card.tsx"
+          },
+          "cssFilePath": "generated/docs_kariba_network/PlasmicCard.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        }
+      ],
+      "icons": [
+        {
+          "id": "w-WY-0yd0Dh6",
+          "name": "CheckSvgIcon",
+          "moduleFilePath": "generated/docs_kariba_network/icons/PlasmicIcon__CheckSvg.tsx"
+        },
+        {
+          "id": "2OoIjXE4Dfc7",
+          "name": "IconIcon",
+          "moduleFilePath": "generated/docs_kariba_network/icons/PlasmicIcon__Icon.tsx"
+        },
+        {
+          "id": "UQgl515eAxHa",
+          "name": "IdeaSvgrepoComSvgIcon",
+          "moduleFilePath": "generated/docs_kariba_network/icons/PlasmicIcon__IdeaSvgrepoComSvg.tsx"
+        }
+      ],
+      "images": [
+        {
+          "id": "unX7HM5llVwD",
+          "name": "OSO Key Visual",
+          "filePath": "../../../static/plasmic/plasmic/docs_kariba_network/images/osoKeyVisual.svg"
+        }
+      ],
+      "indirect": false,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "BPPdz98DlKKw",
+          "name": "PlasmicHead",
+          "displayName": "hostless-plasmic-head",
+          "componentImportPath": "@plasmicapp/react-web"
+        },
+        {
+          "id": "OaUKjQIiRfyz",
+          "name": "Fetcher",
+          "displayName": "plasmic-data-source-fetcher",
+          "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
+        }
+      ],
+      "customFunctions": []
+    }
+  ],
+  "globalVariants": {
+    "variantGroups": [
+      {
+        "id": "FzDljx0p5qq8",
+        "name": "Screen",
+        "projectId": "4ZGquwTsYbHEmYTQjLVG82",
+        "contextFilePath": "generated/docs_kariba_network/PlasmicGlobalVariant__Screen.tsx"
+      }
+    ]
+  },
+  "wrapPagesWithGlobalContexts": true,
+  "cliVersion": "0.1.331",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.331/dist/plasmic.schema.json"
+}
