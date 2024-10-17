@@ -1,0 +1,15 @@
+{
+  "**/!(.eslintrc)*.{js,jsx,ts,tsx,sol}": [
+    "eslint --ignore-path .gitignore --max-warnings 0",
+    "prettier --ignore-path .gitignore --write",
+    "prettier --ignore-path .gitignore --log-level warn --check"
+  ],
+  "**/*.{md,json}": [
+    "prettier --ignore-path .gitignore --write",
+    "prettier --ignore-path .gitignore --log-level warn --check"
+  ],
+  "**/*.py": [
+    "poetry run ruff check --fix --force-exclude",
+    "pnpm pyright"
+  ]
+}

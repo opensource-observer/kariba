@@ -1,0 +1,56 @@
+# NOTE: This name appears in GitHub's Checks API and in workflow's status badge.
+name: deploy-docusaurus-docs
+env:
+  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+  DOCS_URL: ${{ vars.DOCS_URL }}
+  DOCS_ALGOLIA_APP_ID: ${{ vars.DOCS_ALGOLIA_APP_ID }}
+  DOCS_ALGOLIA_API_KEY: ${{ vars.DOCS_ALGOLIA_API_KEY }}
+  DOCS_ALGOLIA_INDEX: ${{ vars.DOCS_ALGOLIA_INDEX }}
+  DOCS_SEGMENT_WRITE_KEY: ${{ vars.DOCS_SEGMENT_WRITE_KEY }}
+
+# Trigger the workflow when:
+on:
+  # A push occurs to one of the matched branches.
+  push:
+    branches:
+      - main
+    paths:
+      - apps/docs/**
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build-deploy:
+    # NOTE: This name appears in GitHub's Checks API.
+    name: build-deploy
+    environment: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.6.0
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          cache: "pnpm"
+          node-version: "20.x"
+
+      - name: Build
+        run: pnpm build:docs
+
+      - name: Publish
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          workingDirectory: "apps/docs"
+          command: pages deploy build --project-name=docs-kariba-network
