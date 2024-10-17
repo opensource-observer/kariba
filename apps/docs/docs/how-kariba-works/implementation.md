@@ -40,17 +40,20 @@ they would each get their own funding pool allocation
 
 Before the end of the funding period when settlement happens,
 admins will get an email overview with:
+
 - Total funding going out
 - Which projects will be funded and by how much (with diffs against previous period)
 - Link to confirm/authorize the distribution
 
 They will be redirected to the application where they can:
+
 - Edit the metric weights for how allocations are determined
 - Edit/remove any project allocation
 - Scale up/down the total distribution for this period
 - Confirm the transaction to authorize the spending
 
 #### General notifications
+
 - Warnings if there aren't enough projects participating before the start date
 - Warnings if the funding pool is low on funds
 - Notifications if the funding pool is starting / ending
@@ -90,13 +93,16 @@ They will be redirected to the application where they can:
 ### Analytics
 
 Admin can see:
+
 - How much they've funded across all projects
 - What other funding these projects have gotten
 
 Funder can see:
+
 - Total they've distributed across all projects over all funding pools.
 
 Projects can see:
+
 - How much they've received and from which funding pools
 
 ## Components
