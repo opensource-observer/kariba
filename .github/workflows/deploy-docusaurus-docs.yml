@@ -48,8 +48,8 @@ jobs:
       - name: Build
         run: pnpm build:docs
 
-      - name: Install wrangler
-        run: pnpm add -g wrangler
+      - name: Install rollup
+        run: pnpm add -g rollup
 
       - name: Publish
         uses: cloudflare/wrangler-action@v3
