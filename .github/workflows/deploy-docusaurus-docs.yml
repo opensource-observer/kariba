@@ -48,12 +48,13 @@ jobs:
       - name: Build
         run: pnpm build:docs
 
-      - name: Install rollup
-        run: pnpm add -g rollup
+      - name: Install wrangler
+        run: pnpm add -g wrangler
 
       - name: Publish
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          workingDirectory: "apps/docs"
-          command: pages deploy build --project-name=docs-kariba-network
+        run: wrangler pages deploy apps/docs/build --project-name=docs-kariba-network
+#        uses: cloudflare/wrangler-action@v3
+#        with:
+#          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+#          workingDirectory: "apps/docs"
+#          command: pages deploy build --project-name=docs-kariba-network
