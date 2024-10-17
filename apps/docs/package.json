@@ -18,7 +18,7 @@
     "lint": "pnpm lint:eslint && pnpm lint:prettier",
     "lint:eslint": "eslint --max-warnings 0 .",
     "lint:prettier": "prettier --ignore-path ../../.gitignore --ignore-path .gitignore --ignore-path .prettierignore --log-level warn --check **/*.{js,jsx,ts,tsx,sol,md,json}",
-    "plasmic:update": "pnpm update @plasmicapp/cli @plasmicapp/react-web",
+    "plasmic:update": "pnpm install && pnpm update @plasmicapp/cli @plasmicapp/react-web",
     "plasmic:sync": "pnpm plasmic sync --yes --force"
   },
   "dependencies": {

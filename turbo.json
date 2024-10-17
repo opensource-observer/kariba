@@ -1,0 +1,41 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local", "**/.env"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["build/**", "dist/**", "out/**", ".docusaurus", ".next/**"]
+    },
+    "deploy": {
+      "dependsOn": ["build"],
+      "outputs": ["build/**", "dist/**", "out/**", ".docusaurus", ".next/**"]
+    },
+    "dev": {
+      "persistent": true
+    },
+    "lint": {},
+    "sentry:sourcemaps": {},
+    "start": {
+      "cache": false
+    },
+    "test": {},
+    "@kariba/docs#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["build/**", ".docusaurus/**"],
+      "env": [
+        "DOCS_URL",
+        "DOCS_ALGOLIA_APP_ID",
+        "DOCS_ALGOLIA_API_KEY",
+        "DOCS_ALGOLIA_INDEX",
+        "DOCS_SEGMENT_WRITE_KEY"
+      ],
+      "cache": false
+    },
+    "@kariba/frontend#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["out/**", ".next/**"],
+      "env": ["PLASMIC_PROJECT_ID", "PLASMIC_PROJECT_API_TOKEN"],
+      "cache": false
+    }
+  }
+}
