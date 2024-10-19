@@ -1,4 +1,3 @@
-import uniqBy from "lodash/uniqBy";
 import { parse } from "graphql";
 import {
   GraphQLClient,
@@ -10,6 +9,10 @@ import { getOptionalEnvVar } from "&/drips/common/wallet/provider.js";
 
 const envBaseUrl = getOptionalEnvVar("PUBLIC_BASE_URL");
 const BASE_URL = envBaseUrl ?? "https://localhost:5173";
+
+function uniqBy<T>(arr: T[], key: string): T[] {
+  return arr;
+}
 
 export default async function query<
   TResponse,
@@ -30,7 +33,7 @@ export default async function query<
   return await client.request<TResponse>(
     {
       ...queryWithTypenames,
-      definitions: uniqBy(queryWithTypenames.definitions, "name.value"),
+      definitions: uniqBy([...queryWithTypenames.definitions], "name.value"),
     },
     variables,
   );
