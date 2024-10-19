@@ -1,0 +1,35 @@
+{
+  "name": "@kariba/sdk",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write ."
+  },
+  "keywords": [],
+  "authors": [
+    {
+      "name": "Javier Ríos",
+      "email": "javi@karibalabs.co"
+    }
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.7.6",
+    "prettier": "^3.3.3",
+    "typescript": "~5.6.3"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.11.8",
+    "@efstajas/versioned-parser": "^0.1.4",
+    "@octokit/rest": "^21.0.2",
+    "abitype": "^1.0.6",
+    "add": "^2.0.6",
+    "ethers": "^6.13.4",
+    "graphql": "^16.9.0",
+    "graphql-request": "^7.1.0",
+    "lodash": "^4.17.21",
+    "zod": "^3.23.8"
+  }
+}
