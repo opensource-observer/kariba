@@ -1,2 +1,6 @@
 packages:
-  - "apps/docs"
+  - apps/docs
+
+onlyBuiltDependencies:
+  - core-js
+  - core-js-pure
