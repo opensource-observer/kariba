@@ -6,7 +6,7 @@ env:
   DOCS_ALGOLIA_APP_ID: ${{ vars.DOCS_ALGOLIA_APP_ID }}
   DOCS_ALGOLIA_API_KEY: ${{ vars.DOCS_ALGOLIA_API_KEY }}
   DOCS_ALGOLIA_INDEX: ${{ vars.DOCS_ALGOLIA_INDEX }}
-  DOCS_SEGMENT_WRITE_KEY: ${{ vars.DOCS_SEGMENT_WRITE_KEY }}
+  DOCS_GOOGLE_ANALYTICS_KEY: ${{ vars.DOCS_GOOGLE_ANALYTICS_KEY }}
 
 # Trigger the workflow when:
 on:
@@ -34,16 +34,16 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9.6.0
+          version: 10.13.1
           run_install: |
             - recursive: true
               args: [--frozen-lockfile, --strict-peer-dependencies]
 
-      - name: Set up Node.js 20
+      - name: Set up Node.js 24
         uses: actions/setup-node@v4
         with:
           cache: "pnpm"
-          node-version: "20.x"
+          node-version: "24.x"
 
       - name: Build
         run: pnpm build:docs

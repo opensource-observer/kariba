@@ -30,7 +30,7 @@ export const ALGOLIA_INDEX = requireEnv(
   process.env.DOCS_ALGOLIA_INDEX,
   "DOCS_ALGOLIA_INDEX",
 );
-export const SEGMENT_WRITE_KEY = requireEnv(
-  process.env.DOCS_SEGMENT_WRITE_KEY,
-  "DOCS_SEGMENT_WRITE_KEY",
+export const GOOGLE_ANALYTICS_KEY = requireEnv(
+  process.env.DOCS_GOOGLE_ANALYTICS_KEY,
+  "DOCS_GOOGLE_ANALYTICS_KEY",
 );

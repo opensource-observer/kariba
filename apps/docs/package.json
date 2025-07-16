@@ -26,7 +26,6 @@
     "@docusaurus/core": "3.8.1",
     "@docusaurus/preset-classic": "3.8.1",
     "@docusaurus/theme-common": "3.8.1",
-    "@laxels/docusaurus-plugin-segment": "^1.0.6",
     "@mdx-js/react": "^3.1.0",
     "@plasmicapp/react-web": "^0.2.393",
     "@plasmicpkgs/plasmic-basic-components": "^0.0.249",

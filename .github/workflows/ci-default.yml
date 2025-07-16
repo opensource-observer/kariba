@@ -10,7 +10,7 @@ env:
   DOCS_ALGOLIA_APP_ID: "test"
   DOCS_ALGOLIA_API_KEY: "test"
   DOCS_ALGOLIA_INDEX: "test"
-  DOCS_SEGMENT_WRITE_KEY: "test"
+  DOCS_GOOGLE_ANALYTICS_KEY: "test"
 
 # Trigger the workflow when:
 on:
@@ -55,7 +55,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9.6.0
+          version: 10.13.1
           run_install: |
             - recursive: true
               args: [--frozen-lockfile, --strict-peer-dependencies]
@@ -63,7 +63,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20.x"
+          node-version: "24.x"
           cache: "pnpm"
 
       - name: Install Foundry

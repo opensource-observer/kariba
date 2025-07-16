@@ -6,7 +6,7 @@ import {
   ALGOLIA_API_KEY,
   ALGOLIA_APP_ID,
   ALGOLIA_INDEX,
-  SEGMENT_WRITE_KEY,
+  GOOGLE_ANALYTICS_KEY,
 } from "./src/config";
 
 const config: Config = {
@@ -52,6 +52,10 @@ const config: Config = {
           blogSidebarTitle: "All posts",
           blogSidebarCount: "ALL",
           blogTagsPostsComponent: "@site/src/components/BlogTagsPostsPage.tsx",
+        },
+        gtag: {
+          trackingID: GOOGLE_ANALYTICS_KEY,
+          //anonymizeIP: true, // Should we anonymize the IP?
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -140,9 +144,6 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
-  plugins: [
-    ["@laxels/docusaurus-plugin-segment", { apiKey: SEGMENT_WRITE_KEY }],
-  ],
 };
 
 export default config;
