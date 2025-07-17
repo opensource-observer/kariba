@@ -21,7 +21,6 @@ import {
 //
 // You can also stop extending from DefaultOverviewProps altogether and have
 // total control over the props for your component.
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface OverviewProps extends DefaultOverviewProps {}
 
 function Overview_(props: OverviewProps, ref: HTMLElementRefOf<"div">) {

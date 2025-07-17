@@ -1,17 +1,22 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import js from "@eslint/js";
-import { FlatCompat } from "@eslint/eslintrc";
+//import js from "@eslint/js";
+//import { FlatCompat } from "@eslint/eslintrc";
 import { includeIgnoreFile } from "@eslint/compat";
+import baseConfig from "../../eslint.config.mjs";
 
+// eslint-disable-next-line
 const __filename = fileURLToPath(import.meta.url);
+// eslint-disable-next-line
 const __dirname = path.dirname(__filename);
 const gitignorePath = path.resolve(__dirname, ".gitignore");
+/**
 const compat = new FlatCompat({
     baseDirectory: __dirname,
     recommendedConfig: js.configs.recommended,
     allConfig: js.configs.all
 });
+*/
 
 export default [
     includeIgnoreFile(gitignorePath),
@@ -32,7 +37,7 @@ export default [
             "**/yarn-debug.log*",
             "**/yarn-error.log*",
         ],
-    }, ...compat.extends("../../.eslintrc.js"), {
+    }, ...baseConfig, {
         languageOptions: {
             ecmaVersion: 5,
             sourceType: "script",
@@ -44,7 +49,6 @@ export default [
 
         rules: {
             "@typescript-eslint/ban-ts-comment": "off",
-            "@typescript-eslint/no-empty-object-type": "off",
         },
     }
 ];

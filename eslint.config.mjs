@@ -1,25 +1,24 @@
-const {
-    defineConfig,
-    globalIgnores,
-} = require("eslint/config");
 
-const globals = require("globals");
-const tsParser = require("@typescript-eslint/parser");
-const typescriptEslint = require("@typescript-eslint/eslint-plugin");
-const react = require("eslint-plugin-react");
-const js = require("@eslint/js");
+import { fileURLToPath } from "node:url";
+import { dirname } from "node:path";
+import globals from "globals";
+import tsParser from "@typescript-eslint/parser";
+import typescriptEslint from "@typescript-eslint/eslint-plugin";
+import react from "eslint-plugin-react";
+import { defineConfig, globalIgnores } from "eslint/config";
+import js from "@eslint/js";
+import { FlatCompat } from "@eslint/eslintrc";
 
-const {
-    FlatCompat,
-} = require("@eslint/eslintrc");
-
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const compat = new FlatCompat({
     baseDirectory: __dirname,
     recommendedConfig: js.configs.recommended,
     allConfig: js.configs.all
 });
 
-module.exports = defineConfig([{
+//module.exports = defineConfig([{
+export default defineConfig([{
     languageOptions: {
         globals: {
             ...globals.browser,
@@ -62,6 +61,7 @@ module.exports = defineConfig([{
         "@typescript-eslint/no-misused-promises": "error",
         "@typescript-eslint/no-floating-promises": "error",
         "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-empty-object-type": "off",
         "@typescript-eslint/no-unused-expressions": "off",
 
         "@typescript-eslint/no-unused-vars": ["warn", {
