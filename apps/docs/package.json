@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "pnpm build:everything",
+    "build": "pnpm build:docs",
     "build:docs": "docusaurus build",
     "build:everything": "pnpm plasmic:update && pnpm plasmic:sync && pnpm build:docs",
     "swizzle": "docusaurus swizzle",
@@ -19,7 +19,7 @@
     "lint:eslint": "eslint --max-warnings 0 .",
     "lint:prettier": "prettier --ignore-path ../../.gitignore --ignore-path .gitignore --ignore-path .prettierignore --log-level warn --check **/*.{js,jsx,ts,tsx,sol,md,json}",
     "plasmic:update": "pnpm install && pnpm update @plasmicapp/cli @plasmicapp/react-web",
-    "plasmic:sync": "pnpm plasmic sync --yes --force",
+    "plasmic:sync": "pnpm plasmic sync",
     "update:deps": "ncu -i"
   },
   "dependencies": {
