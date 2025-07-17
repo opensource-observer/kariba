@@ -62,6 +62,7 @@ module.exports = defineConfig([{
         "@typescript-eslint/no-misused-promises": "error",
         "@typescript-eslint/no-floating-promises": "error",
         "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-empty-object-type": "off",
         "@typescript-eslint/no-unused-expressions": "off",
 
         "@typescript-eslint/no-unused-vars": ["warn", {
