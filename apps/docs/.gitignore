@@ -2,8 +2,8 @@
 /node_modules
 
 # Plasmic
-src/components/plasmic/generated/
-static/plasmic/
+#src/components/plasmic/generated/
+#static/plasmic/
 
 # Production
 /build
