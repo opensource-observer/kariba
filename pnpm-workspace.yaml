@@ -1,5 +1,6 @@
 packages:
-  - apps/docs
+  - "apps/docs"
+  - "packages/sdk"
 
 onlyBuiltDependencies:
   - core-js

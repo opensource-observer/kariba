@@ -1,0 +1,18 @@
+import { extractDriverNameFromAccountId } from "./extract-driver-id.js";
+
+export type AddressDriverId = string;
+
+export default function isAddressDriverId(
+  idAsString: string,
+): idAsString is AddressDriverId {
+  const isNaN = Number.isNaN(Number(idAsString));
+
+  const isAccountIdOfAddressDriver =
+    extractDriverNameFromAccountId(idAsString) === "address";
+
+  if (isNaN || !isAccountIdOfAddressDriver) {
+    return false;
+  }
+
+  return true;
+}

@@ -36,6 +36,11 @@
       "outputs": ["out/**", ".next/**"],
       "env": ["PLASMIC_PROJECT_ID", "PLASMIC_PROJECT_API_TOKEN"],
       "cache": false
+    },
+    "@kariba/sdk#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"],
+      "cache": false
     }
   }
 }
