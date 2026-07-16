@@ -1,3 +1,7 @@
 packages:
   - "apps/docs"
   - "packages/sdk"
+
+onlyBuiltDependencies:
+  - core-js
+  - core-js-pure

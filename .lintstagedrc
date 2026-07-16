@@ -1,6 +1,6 @@
 {
   "**/!(.eslintrc)*.{js,jsx,ts,tsx,sol}": [
-    "eslint --ignore-path .gitignore --max-warnings 0",
+    "eslint --max-warnings 0",
     "prettier --ignore-path .gitignore --write",
     "prettier --ignore-path .gitignore --log-level warn --check"
   ],
